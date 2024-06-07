@@ -136,7 +136,7 @@ elif option == 'Insights':
             
         df = pd.DataFrame(tweets)
         st.subheader(f"Latest 10 tweets from {username}")
-        st.dataframe(df[['text', 'sentiment']])
+        st.dataframe(df[['text', 'sentiment']].style.set_properties(**{'white-space': 'pre-wrap'}))
         
         sentiment_counts = df['sentiment'].value_counts()
 
